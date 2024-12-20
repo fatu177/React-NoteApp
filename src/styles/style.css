@@ -21,7 +21,7 @@ div{
 input,
 textarea ,button{
   width: 35vw;
-  max-width: 600px;
+  max-width: 500px;
   min-width: 300px;
   border-radius: 5px;
   margin: 0.3em;
@@ -41,6 +41,8 @@ button{
 }
 textarea{
   min-height: 200px;
+  max-height: 500px;
+  
 }
 p{
   align-self: flex-end;
