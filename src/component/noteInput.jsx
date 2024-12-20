@@ -17,22 +17,21 @@ class NoteInput extends React.Component {
         this.props.addNote(this.state);
     }
     onTitleChangeEventhandler(event) {
-        this.setState({
-            title: event.target.value,
-        })
-        if (this.state.title.length < 50) {
+        if (event.target.value.length <= 50) {
             this.setState({
+                title: event.target.value,
                 maxCharacter: '',
                 hide: '',
                 textCenter: 'right',
-                color: ''
+                color: '',
+                
             })
         } else {
             this.setState({
                 maxCharacter: 'Karakter Mencapai Batas Maksimum',
                 hide: 'hidden',
                 textCenter: 'center',
-                color: 'red'
+                color: 'red',
             })
 
         }
