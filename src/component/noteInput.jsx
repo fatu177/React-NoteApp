@@ -6,9 +6,6 @@ class NoteInput extends React.Component {
         this.state = {
             title: '',
             body: '',
-            maxCharacter :'',
-            hide:'',
-            textCenter:''
         }
         this.onTitleChangeEventhandler = this.onTitleChangeEventhandler.bind(this);
         this.onBodyChangeEventhandler = this.onBodyChangeEventhandler.bind(this);
@@ -22,22 +19,22 @@ class NoteInput extends React.Component {
     onTitleChangeEventhandler(event) {
         this.setState({
             title: event.target.value,
-        })  
+        })
         if (this.state.title.length < 50) {
             this.setState({
                 maxCharacter: '',
                 hide: '',
                 textCenter: 'right',
-                color:''
+                color: ''
             })
-        } else{
+        } else {
             this.setState({
                 maxCharacter: 'Karakter Mencapai Batas Maksimum',
                 hide: 'hidden',
                 textCenter: 'center',
-                color:'red'
+                color: 'red'
             })
-            
+
         }
     }
     onBodyChangeEventhandler(event) {
@@ -48,16 +45,17 @@ class NoteInput extends React.Component {
     render() {
         return (
             <div>
-            <form className="note-input" onSubmit={this.onSubmitEventHandler}>
-                <p style={{alignSelf:this.state.textCenter,
-                    color:this.state.color
-                }}>{this.state.maxCharacter}<span hidden={this.state.hide}>Sisa Karakter: {50 - this.state.title.length}</span> </p>
-                <input type="text" value={this.state.title} onChange={this.onTitleChangeEventhandler
-                } placeholder="Masukan Judul Catatan...." />
-                <textarea value={this.state.body} onChange={this.onBodyChangeEventhandler
-                } placeholder="Masukan Isi Catatan...." />
-                <button type="submit">Add Note</button>
-            </form>
+                <form className="note-input" onSubmit={this.onSubmitEventHandler}>
+                    <p style={{
+                        alignSelf: this.state.textCenter,
+                        color: this.state.color
+                    }}>{this.state.maxCharacter}<span hidden={this.state.hide}>Sisa Karakter: {50 - this.state.title.length}</span> </p>
+                    <input type="text" value={this.state.title} onChange={this.onTitleChangeEventhandler
+                    } placeholder="Masukan Judul Catatan...." />
+                    <textarea value={this.state.body} onChange={this.onBodyChangeEventhandler
+                    } placeholder="Masukan Isi Catatan...." />
+                    <button type="submit">Add Note</button>
+                </form>
             </div>
         )
     }
